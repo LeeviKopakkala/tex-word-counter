@@ -1,0 +1,108 @@
+{
+  "name": "tex-word-count",
+  "displayName": "TeX Word Count",
+  "description": "A live word count for LaTeX documents in the status bar, with per-section and selection counts.",
+  "version": "0.1.0",
+  "publisher": "leevikopakkala",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LeeviKopakkala/LaTeX-counter"
+  },
+  "icon": "images/icon.png",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "latex",
+    "tex",
+    "word count",
+    "status bar"
+  ],
+  "activationEvents": [
+    "onLanguage:latex"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "texWordCount.openSettings",
+        "title": "TeX Word Count: Open Settings"
+      }
+    ],
+    "configuration": {
+      "title": "TeX Word Count",
+      "properties": {
+        "texWordCount.countMath": {
+          "type": "boolean",
+          "default": false,
+          "description": "Count words inside math environments and $...$, \\(...\\), \\[...\\]."
+        },
+        "texWordCount.countCaptions": {
+          "type": "boolean",
+          "default": true,
+          "description": "Count words inside \\caption{...}."
+        },
+        "texWordCount.countFootnotes": {
+          "type": "boolean",
+          "default": true,
+          "description": "Count words inside \\footnote{...}."
+        },
+        "texWordCount.countHeadings": {
+          "type": "boolean",
+          "default": true,
+          "description": "Count words inside \\section{...} and other heading commands."
+        },
+        "texWordCount.sectionIncludesSubsections": {
+          "type": "boolean",
+          "default": true,
+          "description": "When showing the current section's count, include the word count of its subsections."
+        },
+        "texWordCount.showSection": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show the word count of the section containing the cursor."
+        },
+        "texWordCount.showSelection": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show the word count of the current selection."
+        },
+        "texWordCount.extraSectionCommands": {
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "description": "Extra command names (without backslash) to treat as section-like headings, e.g. \"mysection\". Treated at the \\section level."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "node esbuild.js",
+    "watch": "node esbuild.js --watch",
+    "vscode:prepublish": "npm run build -- --production",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "compile-tests": "tsc -p ./",
+    "test:integration": "npm run build && npm run compile-tests && node ./out/test/integration/runTest.js",
+    "typecheck": "tsc --noEmit",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/test-electron": "^3.1.0",
+    "@vscode/vsce": "^2.32.0",
+    "esbuild": "^0.23.0",
+    "glob": "^13.0.6",
+    "mocha": "^12.0.2",
+    "typescript": "^5.5.0",
+    "vitest": "^2.0.0"
+  }
+}
