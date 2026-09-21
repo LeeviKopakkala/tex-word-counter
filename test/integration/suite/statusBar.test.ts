@@ -23,7 +23,7 @@ suite('TeX Word Count status bar', () => {
     await vscode.window.showTextDocument(doc);
     api.refreshNow();
 
-    assert.match(api.getStatusBarText(), /^TeX: 6\b/);
+    assert.match(api.getStatusBarText(), /^Total words: 6\b/);
   });
 
   test('shows the section count when the cursor is inside a section', async () => {
@@ -45,7 +45,7 @@ suite('TeX Word Count status bar', () => {
     api.refreshNow();
 
     const text = api.getStatusBarText();
-    assert.match(text, /§ 5\b/, `expected a section count of 5, got "${text}"`);
+    assert.match(text, /Section: 5\b/, `expected a section count of 5, got "${text}"`);
   });
 
   test('shows the selection count when text is selected', async () => {
@@ -60,7 +60,7 @@ suite('TeX Word Count status bar', () => {
     api.refreshNow();
 
     const text = api.getStatusBarText();
-    assert.match(text, /sel 3\b/, `expected a selection count of 3, got "${text}"`);
+    assert.match(text, /Selected: 3\b/, `expected a selection count of 3, got "${text}"`);
   });
 
   test('hides the item for non-LaTeX documents', async () => {

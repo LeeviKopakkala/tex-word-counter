@@ -1,14 +1,16 @@
 # TeX Word Count
 
+Small project that came from a need to count words for school projects.
+
 A live word count for LaTeX documents, in the status bar. No LaTeX Workshop required — it activates on VS Code's built-in `latex` language.
 
 ## What it shows
 
 A single status bar item that adapts to context:
 
-- `TeX: 4,210` — total words in the document
-- `TeX: 4,210 · § 615` — plus the word count of the section containing the cursor
-- `TeX: 4,210 · § 615 · sel 42` — plus the word count of the current selection
+- `Total words: 4,210` — total words in the document
+- `Total words: 4,210 · Section: 615` — plus the word count of the section containing the cursor
+- `Total words: 4,210 · Section: 615 · Selected: 42` — plus the word count of the current selection
 
 Hover the item for a breakdown (total, section title and count, selection). Click it to open the extension's settings.
 
