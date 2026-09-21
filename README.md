@@ -4,6 +4,8 @@ Small project that came from a need to count words for school projects.
 
 A live word count for LaTeX documents, in the status bar. No LaTeX Workshop required — it activates on VS Code's built-in `latex` language.
 
+![Status bar showing Total words: 260 · Section: 202 · Selected: 65](images/status-bar.png)
+
 ## What it shows
 
 A single status bar item that adapts to context:
