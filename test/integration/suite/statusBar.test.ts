@@ -2,7 +2,7 @@ import * as assert from 'assert';
 import * as vscode from 'vscode';
 import { TexWordCountApi } from '../../../src/extension';
 
-const EXTENSION_ID = 'leevikopakkala.tex-word-count';
+const EXTENSION_ID = 'leevikopakkala.latex-word-count-statusbar';
 
 async function activateExtension(): Promise<TexWordCountApi> {
   const ext = vscode.extensions.getExtension<TexWordCountApi>(EXTENSION_ID);

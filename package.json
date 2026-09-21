@@ -1,6 +1,6 @@
 {
-  "name": "tex-word-count",
-  "displayName": "TeX Word Count",
+  "name": "latex-word-count-statusbar",
+  "displayName": "LaTeX Live Word Count",
   "description": "A live word count for LaTeX documents in the status bar, with per-section and selection counts.",
   "version": "0.1.0",
   "publisher": "leevikopakkala",

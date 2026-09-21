@@ -1,4 +1,4 @@
-# TeX Word Count
+# LaTeX Live Word Count
 
 Small project that came from a need to count words for school projects.
 
